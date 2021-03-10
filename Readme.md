@@ -5,7 +5,7 @@ Any RakuScript extends form Rakugo's _Dialogue_ node
 
 ## Comments
 
-RakuScript use `//` for comments because it uses `#` for functions and dialogue events.
+`#` is used for comments.
 
 ## Commas
 
@@ -24,9 +24,9 @@ syntax on them.
 # Member variables
 
 var a = 5
-var b = true //or false
-// they are more ways to declare
-// String, Array and Dictionary in RakuScript
+var b = true #or false
+# they are more ways to declare
+# String, Array and Dictionary in RakuScript
 var s = "Hello"
 var arr = [1, 2, 3]
 var dict = {"key": "value", 2: 3}
@@ -65,8 +65,8 @@ You can get this vars in any RakuScript in your game.
 def @variable_name = value
 
 def:
-    @empty_var = @nothing
-    @another_var = 1
+  @empty_var = @nothing
+  @another_var = 1
 ```
 
 To get global variable you can use `?` as shortcut so it easier to use them in functions and conditions.
@@ -101,7 +101,7 @@ In RakuScript we have 3 string formats:
 
 ```
 var empty_string = @
-// or traditional way
+# or traditional way
 var traditional_empty_string = ""
 ```
 
@@ -122,12 +122,12 @@ Useful for funcs like `show`.
 Can be define in 3 different ways:
 
 ```
-var GDScript_arry = [1, 2 3]
-var RakuScript_arry ## 1 2 3
-var RakuScript_arry_few_lines ##
-    - 1
-    - 2
-    - 3
+var arry_a = [1, 2 3]
+var arry_b = array 1 2 3
+var arry_c = array
+  - 1
+  - 2
+  - 3
 ```
 
 ## Dictionaries
@@ -135,54 +135,23 @@ var RakuScript_arry_few_lines ##
 Can be define in 3 different ways:
 
 ```
-var GDScript_dict = {"one": 1, @two: 2 @three: 3}
-var RakuScript_dict ## @one: 1, @two: 2 @three: 3
-var RakuScript_dict_few_lines ##
-    - @one: 1
-    - @two: 2
-    - @three: 3
+var dict_a = {"one": 1, @two: 2 @three: 3}
+var dict_b = dict @one: 1, @two: 2 @three: 3
+var dict_c = dict
+  - @one: 1
+  - @two: 2
+  - @three: 3
 ```
 
 ## Conditions
 
-In RakuScript you have to types of conditions:
-
-### GDScript ones
-
-As you see in example below `if`, `elif` and `match`
-have `_` as suffix.
-
-```python
-# func some_function(param1, param2):
-  var local_var = 5
-
-  _if param1 < local_var:
-    print(param1)
-  _elif param2 > 5:
-    print(param2)
-
-  var test_match = "one"
-
-  _match test_match:
-    "one":
-      print("display this if one")
-    "two":
-      print("display this if two)
-
 ```
-
-### RakuScript ones
-
-This conditions works only inside dialogue event:
-
-```
-# some_dialogue_event:
   var local_var = 5
 
   if param1 < local_var:
-    say @ param1
+    say @ str param1
   elif param2 > 5:
-    say @ param2
+    say @ str param2
 
   var test_match = @one
 
@@ -198,16 +167,16 @@ This conditions works only inside dialogue event:
 
 ```
 # dialogue_event_name:
-    say @ "Say Hello"
+  say @ "Say Hello"
 ```
 
 is the same as in GDScript
 
 ```
 func dialogue_event_name():
-    start_event("dialogue_event_name")
-    say(null, "Say Hello")
-    step()
+  start_event("dialogue_event_name")
+  say(null, "Say Hello")
+  step()
 ```
 
 `step` before next `say` is optional.
@@ -217,18 +186,18 @@ func dialogue_event_name():
 To declare new function:
 
 ```
-# func new_function arg1 arg2:
-    pass
+func new_function(arg1, arg2):
+  pass
 
-//or
-# func new_function(arg1, arg2):
-    pass
+# or
+func new_function arg1 arg2:
+  pass
 
-// or
-# new_function:
-    - arg1
-    - arg2
-    pass
+# or
+new_function:
+  - arg1
+  - arg2
+  pass
 ```
 
 ### Examples of Calling funcs
@@ -238,10 +207,10 @@ To declare new function:
 ```
 say @character_tag >Stuff to say many lines.
 
-// or
+# or
 say @character_tag "Stuff to say one Line."
 
-// if just Narrator
+# if just Narrator
 
 say @ >Narrator say many lines.
 
@@ -252,23 +221,23 @@ say @ "Narrator say one line."
 
 ```
 say "What is your name?"
-var player_name = ask @ ## @placeholder: "Player Name"
+var player_name = ask @ dict @placeholder: "Player Name"
 ```
 
 #### Menu
 
 ```
 say @ "Choose game mode"
-var choice = menu ##
-    - @Easy @easy {}
-    - @Normal @normal {}
-    - @Hard @hard {}
+var choice = menu array
+  - @Easy @easy {}
+  - @Normal @normal {}
+  - @Hard @hard {}
 ```
 
 ### Show, Hide and Notify
 
 ```
-show @sylvie @sad ## @some_parameter: 1
+show @sylvie @sad dict @some_parameter: 1
 step
 hide @sylvie
 notify >You will never see her again :(
