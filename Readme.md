@@ -166,7 +166,7 @@ var dict_c = dict
 ## Dialogue Events
 
 ```
-# dialogue_event_name:
+dialogue event_name:
   say @ "Say Hello"
 ```
 
