@@ -8,7 +8,7 @@ func _ready:
   character  @Sylive,  @s, Color.pink
   character  @Me,  @m, Color.skyblue
 
-intro_dialog:
+dialogue intro_dialog:
 
   hide @label
   hide @sylvie
