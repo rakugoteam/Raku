@@ -20,7 +20,7 @@ In Rakugo Script we have 2 kinds of variables: local and global
 Are just normal GDScript variables, but you can use RakuScript
 syntax on them.
 
-```js
+```
 # Member variables
 
 var a = 5
@@ -55,8 +55,8 @@ var v3 = Vector3 1 2 3
 
 This is the same as in GDScript:
 
-```js
-Rakugo.store.set("variable_name", value);
+```
+Rakugo.store.set("variable_name", value)
 ```
 
 You can get this vars in any RakuScript in your game.
@@ -95,7 +95,7 @@ In RakuScript we have 3 string formats:
 
 - `@one_word_string`
 - `"Short One Line String"`
-- `>Long Multi Lines String` - this is ended with empty new line
+- `>>Long Multi Lines String` - this is ended with empty new line
 
 ### Empty Strings
 
@@ -125,9 +125,9 @@ Can be define in 3 different ways:
 var arry_a = [1, 2 3]
 var arry_b = array 1 2 3
 var arry_c = array
-  - 1
-  - 2
-  - 3
+  1
+  2
+  3
 ```
 
 ## Dictionaries
@@ -138,9 +138,9 @@ Can be define in 3 different ways:
 var dict_a = {"one": 1, @two: 2 @three: 3}
 var dict_b = dict @one: 1, @two: 2 @three: 3
 var dict_c = dict
-  - @one: 1
-  - @two: 2
-  - @three: 3
+  @one: 1
+  @two: 2
+  @three: 3
 ```
 
 ## Conditions
@@ -157,10 +157,10 @@ var dict_c = dict
 
   match:
     @one:
-      say @ > Say this if one.
+      say @ >> Say this if one.
 
     @two:
-      say @ > Say this if two.
+      say @ >> Say this if two.
 ```
 
 ## Dialogue Events
@@ -205,14 +205,14 @@ new_function:
 #### Say
 
 ```
-say @character_tag >Stuff to say many lines.
+say @character_tag >>Stuff to say many lines.
 
 # or
 say @character_tag "Stuff to say one Line."
 
 # if just Narrator
 
-say @ >Narrator say many lines.
+say @ >>Narrator say many lines.
 
 say @ "Narrator say one line."
 ```
@@ -240,6 +240,6 @@ var choice = menu array
 show @sylvie @sad dict @some_parameter: 1
 step
 hide @sylvie
-notify >You will never see her again :(
+notify >>You will never see her again :(
 
 ```

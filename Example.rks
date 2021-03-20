@@ -13,27 +13,27 @@ intro_dialog:
   hide @label
   hide @sylvie
   show @bg @lecturehall
-  say @ >It's only when I hear the sounds of shuffling
+  say @ >>It's only when I hear the sounds of shuffling
     feet and supplies being put away that I realize that the lecture's over.
 
-  say @ >Professor Eileen's lectures are usually interesting,"but today 	I just couldn't concentrate on it.
+  say @ >>Professor Eileen's lectures are usually interesting,"but today 	I just couldn't concentrate on it.
 
-  say @ >I've had a lot of other thoughts on my mind...
+  say @ >>I've had a lot of other thoughts on my mind...
     thoughts that culminate in a question.
 
-  say @ >It's a question that I've been meaning to ask a certain someone.
+  say @ >>It's a question that I've been meaning to ask a certain someone.
 
   show @bg @uni
-  say @ >When we come out of the university, I spot her right away.
+  say @ >>When we come out of the university, I spot her right away.
 
   show @sylvie @green @normal
-  say > I've known <s.name> since we were kids.
+  say >>I've known <s.name> since we were kids.
     She's got a big heart and she's
     always been a good friend to me.
 
-  say @ >But recently... I've felt that I want something more.
+  say @ >>But recently... I've felt that I want something more.
 
-  say @ >More than just talking, more than just walking
+  say @ >>More than just talking, more than just walking
     home together when our classes end.
     
     dict @typing: false
